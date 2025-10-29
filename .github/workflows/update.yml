@@ -31,5 +31,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "github-actions"
           git add data/onepunchman.json
-          git commit -m "update json" || echo "No changes"
-          git push
+          git diff-index --quiet HEAD || git commit -m "update json"
+          git push origin main
